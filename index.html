@@ -19,7 +19,7 @@
             </div>
             <div class='modal'>
                 <div class="header">
-                    <p class='title'>请选择企业</p>
+                    <p class='title'>请选择</p>
                     <p class='cancel'>×</p>
                 </div>
                 <div class="list">
@@ -68,6 +68,12 @@
                     var tableContent = " ";
                     $.each(list,function(i){
                         var ele = list[i];
+                        var showName = ''
+                        if (ele.name) {
+                            showName = ele.name
+                        } else {
+                            showName = ele.person
+                        }
                         var name = ''
                         if (ele.person === value) {
                             name = ele.person
@@ -75,10 +81,9 @@
                             name = ele.name
                         }
                         tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .8rem; color: #1E90ff">';
-                        tableContent += '<a style="font-size: 14px; width: 100%; display: inline-block" href="detail.html?name='+name+'&seat='+ele.seat+'")>'+ele.name+'('+ele.person+')'+'</a>'
+                        tableContent += '<a style="font-size: 14px; width: 100%; display: inline-block" href="detail.html?name='+name+'&seat='+ele.seat+'")>'+showName+'</a>'
                         tableContent += '</p>'; 
                     })
-                    console.log(tableContent)
                     $('.modal').css('display','block');
                     $(".list").html(tableContent);
                     
