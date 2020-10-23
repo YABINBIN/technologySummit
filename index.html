@@ -62,26 +62,13 @@
                 if(list.length === 0) {
                     Toast('未查询到结果', 1000)
                 } else if (list.length === 1) {
-                    var personName = list[0].person || list[0].name
-                    delComment(personName, list[0].seat)
+                    delComment(list[0].name, list[0].seat)
                 } else {
                     var tableContent = " ";
                     $.each(list,function(i){
                         var ele = list[i];
-                        var showName = ''
-                        if (ele.name) {
-                            showName = ele.name
-                        } else {
-                            showName = ele.person
-                        }
-                        var name = ''
-                        if (ele.person === value) {
-                            name = ele.person
-                        } else {
-                            name = ele.name
-                        }
                         tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .8rem; color: #1E90ff">';
-                        tableContent += '<a style="font-size: 14px; width: 100%; display: inline-block" href="detail.html?name='+name+'&seat='+ele.seat+'")>'+showName+'</a>'
+                        tableContent += '<a style="font-size: 14px; width: 100%; display: inline-block" href="detail.html?name='+ele.name+'&seat='+ele.seat+'")>'+ele.name+'</a>'
                         tableContent += '</p>'; 
                     })
                     $('.modal').css('display','block');
