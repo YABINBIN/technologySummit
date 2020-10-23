@@ -27,7 +27,7 @@
 }
 .arrow {
   color: white;
-  background: none;
+  background: transparent;
   font-size: 14px;
   margin-left: .1rem;
 }
