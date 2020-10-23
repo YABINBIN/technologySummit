@@ -48,8 +48,10 @@
     })(document,window);
 </script>
 <script>
-    $(document).ready(function(){
+    window.onload(function(){
         $('body').height(window.innerHeight);
+    })
+    $(document).ready(function(){
         $('.arrow').click(function(){
             var value = $('.input').val()
             if (!value) {
