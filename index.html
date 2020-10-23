@@ -49,7 +49,7 @@
 </script>
 <script>
     $(document).ready(function(){
-        $('body').height(document.documentElement.clientHeight);
+        $('body').height(window.innerHeight);
         $('.arrow').click(function(){
             var value = $('.input').val()
             if (!value) {
