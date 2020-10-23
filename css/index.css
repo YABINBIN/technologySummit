@@ -9,7 +9,7 @@
 }
 @media (min-device-width: 375px) {
   .container {
-    background-size: 120% 100%;
+    background-size: 100% 100%;
   }
 }
 .insert {
