@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <title>智慧丽水</title>
+        <meta name="author" content="牛奇超" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="./css/detail.css">
+        <script type="text/javascript" src="./js/jquery-2.0.3.js"></script>
+        <script type="text/javascript" src="./js/params.js"></script>
+	</head>
+	<body>
+      <div class="container">
+        <div class='name'>尊敬的嘉宾：<span class='show'></span></div>
+        <div class='seat'></div>
+      </div>
+	</body>
+</html>
+<script>
+	(function(doc,win){
+      var docEl = doc.documentElement,
+              resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              recalc = function() {
+                  var clientWidth = docEl.clientWidth;
+                  if(!clientWidth) return;
+                  if (clientWidth >= 640) {
+                      docEl.style.fontSize = '100px';
+                  } else{
+                      docEl.style.fontSize = 100 *(clientWidth / 640) + 'px';
+                  }
+              };
+      if(!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded',recalc,false);
+  })(document,window)
+</script>
+<script>
+    $(document).ready(function(){
+      var name = $.query.get('name')
+      var seat = $.query.get('seat')
+      $('.show').text(name)
+      $('.seat').text(seat)
+    });
+</script>
