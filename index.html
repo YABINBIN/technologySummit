@@ -14,7 +14,7 @@
 	<body class='all'>
         <div class="container">
             <div class="insert">
-                <input class='input' placeholder="请输入企业名称">
+                <input class='input' placeholder="请输入企业名称/姓名">
                 <button class="arrow">确定</button>
             </div>
             <div class='modal'>
@@ -52,24 +52,31 @@
         $('.arrow').click(function(){
             var value = $('.input').val()
             if (!value) {
-                Toast('请先输入企业名称', 1000)
+                Toast('请先输入内容', 1000)
             } else {
                 var list = []
                 data.forEach(function(item){
-                    if (item.name.indexOf(value) != -1) {
+                    if ((item.person === value) || (item.name.indexOf(value) != -1)) {
                         list.push(item)
                     }
                 })
                 if(list.length === 0) {
-                    Toast('企业名称有误', 1000)
+                    Toast('未查询到结果', 1000)
                 } else if (list.length === 1) {
-                    delComment(list[0].name, list[0].seat)
+                    var personName = list[0].person || list[0].name
+                    delComment(personName, list[0].seat)
                 } else {
                     var tableContent = " ";
                     $.each(list,function(i){
                         var ele = list[i];
+                        var name = ''
+                        if (ele.person === value) {
+                            name = ele.person
+                        } else {
+                            name = ele.name
+                        }
                         tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .8rem; color: #1E90ff">';
-                        tableContent += '<a style="font-size: 14px" href="detail.html?name='+ele.name+'&seat='+ele.seat+'")>'+ele.name+'</a>'
+                        tableContent += '<a style="font-size: 14px" href="detail.html?name='+name+'&seat='+ele.seat+'")>'+ele.name+'('+ele.person+')'+'</a>'
                         tableContent += '</p>'; 
                     })
                     console.log(tableContent)
