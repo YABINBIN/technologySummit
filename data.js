@@ -83,6 +83,7 @@ var data = [
   {name: '刘洪海', seat: '4排51座'},
   {name: '吴良专', seat: '4排52座'},
   {name: '祝涛', seat: '4排53座'},
+  {name: '祝涛', seat: '2排5座'},
   {name: '苗长龙', seat: '4排54座'},
   {name: '张根', seat: '4排55座'},
   {name: '杨光', seat: '4排56座'},
