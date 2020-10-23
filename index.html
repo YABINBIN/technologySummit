@@ -70,7 +70,7 @@
                     $.each(list,function(i){
                         var ele = list[i];
                         tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .5rem; color: #1E90ff">';
-                        tableContent += '<a onclick=delComment("'+ele.name+'","'+ele.seat +'")>'+ele.name+'</a>'
+                        tableContent += '<a href="detail.html?name='+ele.name+'&seat='+ele.seat+'")>'+ele.name+'</a>'
                         tableContent += '</p>'; 
                     })
                     console.log(tableContent)
@@ -85,7 +85,10 @@
         })
     });
     function delComment(name, seat) {
-        var url = './detail.html?name=' +name + '&seat=' + seat
-        window.location.href = url
+        var a = document.createElement('a');
+        var url = 'detail.html?name=' +name + '&seat=' + seat
+        a.setAttribute('href', url);
+        document.body.appendChild(a);
+        a.click();
     }
 </script>

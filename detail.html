@@ -13,7 +13,10 @@
 	<body>
       <div class="container">
         <div class='name'>尊敬的嘉宾：<span class='show'></span></div>
-        <div class='seat'></div>
+        <div class='seat'>
+          <p class='seatTitle'>您的座位是:</p>
+          <p class='seatname'></p>
+        </div>
       </div>
 	</body>
 </html>
@@ -40,6 +43,6 @@
       var name = $.query.get('name')
       var seat = $.query.get('seat')
       $('.show').text(name)
-      $('.seat').text(seat)
+      $('.seatname').text(seat)
     });
 </script>
