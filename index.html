@@ -11,11 +11,11 @@
         <script type="text/javascript" src="./data.js"></script>
         <script type="text/javascript" src="./js/toast.js"></script>
 	</head>
-	<body>
+	<body class='all'>
         <div class="container">
             <div class="insert">
                 <input class='input' placeholder="请输入企业名称">
-                <span class="arrow">＞</span>
+                <button class="arrow">确定</button>
             </div>
             <div class='modal'>
                 <div class="header">
@@ -36,10 +36,10 @@
                 recalc = function() {
                     var clientWidth = docEl.clientWidth;
                     if(!clientWidth) return;
-                    if (clientWidth >= 640) {
+                    if (clientWidth >= 750) {
                         docEl.style.fontSize = '100px';
                     } else{
-                        docEl.style.fontSize = 100 *(clientWidth / 640) + 'px';
+                        docEl.style.fontSize = 100 *(clientWidth / 750) + 'px';
                     }
                 };
         if(!doc.addEventListener) return;
@@ -69,8 +69,8 @@
                     var tableContent = " ";
                     $.each(list,function(i){
                         var ele = list[i];
-                        tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .5rem; color: #1E90ff">';
-                        tableContent += '<a href="detail.html?name='+ele.name+'&seat='+ele.seat+'")>'+ele.name+'</a>'
+                        tableContent += '<p style="border-bottom: 1px solid #eee; word-wrap:break-word;word-break:break-all; line-height: .8rem; color: #1E90ff">';
+                        tableContent += '<a style="font-size: 14px" href="detail.html?name='+ele.name+'&seat='+ele.seat+'")>'+ele.name+'</a>'
                         tableContent += '</p>'; 
                     })
                     console.log(tableContent)

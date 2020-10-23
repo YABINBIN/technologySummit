@@ -1,16 +1,17 @@
 .container {
   position: relative;
   font-size: 12px;
-  width: 6.4rem;
+  width: 100vw;
   height: 100vh;
   font-size: 0.12rem;
   background: url(../images/2.png) no-repeat 50% 50% / 100% 100%;
+  background-size: cover;
 }
 .insert {
   position: absolute;
   top: 50%;
-  width: 6rem;
-  margin-left: .2rem;
+  width: 5.4rem;
+  margin-left: 1.2rem;
   height: 1rem;
   text-align: center;
 }
@@ -26,7 +27,9 @@
 }
 .arrow {
   color: white;
+  background: none;
   font-size: 14px;
+  margin-left: .1rem;
 }
 input::-webkit-input-placeholder{
   color: #fff;
@@ -55,15 +58,15 @@ input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
 .header {
   position: relative;
   text-align: center;
-  line-height: 0.6rem;
-  font-size: .14rem;
+  line-height: 1rem;
+  font-size: 14px;
 }
 .list {
   width: 100%;
   text-align: center;
   font-size: .12rem;
   line-height: .4rem;
-  height: 5.8rem;
+  height: 5.4rem;
   overflow-y: auto;
 }
 .title {

@@ -4,6 +4,7 @@
   height: 100vh;
   font-size: 0.12rem;
   background: url(../images/1.jpg) no-repeat 50% 50% / 100% 100%;
+  background-size: cover;
 }
 .name {
   position: absolute;
