@@ -49,6 +49,7 @@
 </script>
 <script>
     $(document).ready(function(){
+        $('body').height($('body')[0].clientHeight);
         $('.arrow').click(function(){
             var value = $('.input').val()
             if (!value) {

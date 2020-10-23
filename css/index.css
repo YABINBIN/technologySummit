@@ -7,7 +7,7 @@
   background: url(../images/one.jpg) no-repeat 50% 50% / 100% 100%;
   background-size: cover;
 }
-@media (min-device-width: 375px) {
+@media (max-device-width: 375px) {
   .container {
     background-size: 100% 100%;
   }
