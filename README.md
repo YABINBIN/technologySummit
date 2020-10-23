@@ -1,2 +1,1 @@
-# technologySummit
-technologySummit
+# 第九届"智慧丽水"人才科技峰会座位表展示
